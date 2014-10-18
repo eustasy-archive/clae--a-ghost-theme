@@ -1,0 +1,132 @@
+<!DocType html>
+<html>
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Clae for Ghost Documentation</title>
+
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/g/normalize,colors.css" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Serif|Droid+Sans:400,700" />
+	<link rel="stylesheet" type="text/css" href="clae/assets/css/style.min.css" />
+
+</head>
+<body>
+
+	<div class="clae-container">
+
+		<h1>&ldquo;Clae for Ghost&rdquo;</h1>
+		<p><strong>Created: 15/10/2013<br>
+		By Lewis Goddard (eustasy)</strong></p>
+		<p>A clean, simple, responsive HTML 5 Theme for <a href="http://ghost.org">Ghost</a>.</p>
+		<h3 class="warning color-pomegranate">WARNING: Clae is now unsupported. Use at your own risk.</h3>
+
+		<hr>
+
+		<h2 id="toc">Table of Contents</h2>
+		<ol>
+			<li><a href="#introduction">Introduction</a></li>
+			<li><a href="#ghost">Ghost</a></li>
+			<li><a href="#install">Installing this Theme</a></li>
+			<li><a href="#handlebars">Handlebars</a></li>
+			<li><a href="#css">CSS</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#restrictions">Restrictions of Ghost</a></li>
+		</ol>
+
+		<hr id="introduction">
+
+		<p>Clae (pronounced "Clay") will automatically use the Cover and Logo you upload in your Ghost settings. For best results, use a darker, wide, panorama like cover, and a light, if not white logo with a transparent background. Note that the logo will be scaled to match the header text, but the background will be trimmed to cover the area, usually losing the left and right of the image, as it is centered vertically. This will vary according to screen size, and as such your header image should be at least 1920x1080px, and a .jpg to save on file size. <a href="http://www.jpegmini.com">JPEGMini</a> is a good site for unnoticeable compression.</p>
+		<p>The theme is both responsive and touch-ready, and incorporates the latest web technologies, and the most graceful of fallback options, providing a near seamless experience from Internet Explorer 7 through to the latest and greatest browsers.</p>
+		<p>We wish to express thanks to <a href="http://flatuicolors.com/">Flat UI Colors</a> for their wonderful shades of blue, and <a href="http://flaticons.net/">FlatIcons.net</a> for their royalty free <a href="http://flaticons.net/customize.php?dir=Application&icon=Arrowhead-Up.png">up arrow</a>. It is, almost always, the little things.</p>
+		<p>Please note that neither the cover nor the logo are included in this package, and that the theme name in the footer changes with the site title to match the header, and is not required credit nor attribution.</p>
+
+		<hr>
+
+		<h3 id="ghost"><strong>Ghost</strong><small> - <a href="#toc">top</a></small></h3>
+		<p>Ghost is a fairly new system, so I've taken the liberty of linking to a few good resources, namely the Ghost Documentation and Forum.</p>
+		<ul>
+			<li><a href="http://support.ghost.org/installation/">Installation</a></li>
+			<li><a href="http://support.ghost.org/usage/">Using Ghost</a></li>
+			<li><a href="https://en.ghost.org/forum">Ghost Forum</a></li>
+		</ul>
+
+		<hr>
+
+		<h3 id="install"><strong>Installing this Theme</strong><small> - <a href="#toc">top</a></small></h3>
+		<p><em>Partly quoted from the <a href="http://support.ghost.org/themes/">Ghost Documentation</a>.</em></p>
+		<p>Download the theme package of your choice, extract it and place it in <code>content/themes</code>. It should be in a folder called <code>clae</code> alongside another called <code>casper</code>.</p>
+		<p>To switch to your newly purchased theme:</p>
+		<ol>
+			<li>Restart Ghost. At the moment, Ghost won't notice that you've added a new folder to <code>content/themes</code> so you'll need to restart it</li>
+			<li>Login to your Ghost admin, and navigate to  <code>/ghost/settings/general/</code></li>
+			<li>Select "Clae" in the Theme options dropdown</li>
+			<li>Click 'Save'</li>
+			<li>Visit the frontend of your blog and marvel at your new theme.</li>
+		</ol>
+
+		<hr>
+
+		<h3 id="handlebars"><strong>Handlebars</strong><small> - <a href="#toc">top</a></small></h3>
+		<p>Handlebars is the framework that Ghost uses for theming. It is why the theme files are called <code>index.hbs</code>, <code>post.hbs</code> and <code>default.hbs</code>. Because this theme conforms to the Ghost guidelines, the theme is split into these three files.</p>
+		<p><code>post.hbs</code> is called when an individual post is being displayed.</p>
+		<p><code>index.hbs</code> is called when the homepage is being called, and lists the most recent posts and handles pagination.</p>
+		<p><code>default.hbs</code> is called from both <code>index.hbs</code> and <code>post.hbs</code> and contains the header, footer, and other, behind the scenes codes that appears n every page.</p>
+		<p>All of these files contain the general structure of the site, and handle only a minimal amount of logic. You should probably leave them alone.</p>
+
+		<hr>
+
+		<h3 id="css"><strong>CSS</strong><small> - <a href="#toc">top</a></small></h3>
+		<p>The CSS comes in both minified and standard versions, stored in the <code>css</code> folder.</p>
+		<p>The file <code>style.min.css</code>, and it's father, <code>style.css</code>, contain the actual theme styles.</p>
+		<p>If you are gong to change anything, I would recommend switching from <code>style.min.css</code> to <code>style.css</code> in <code>default.hbs</code>.</p>
+		<p>A rudimentary understanding of CSS is required to modify the theme, for instance, to change the header text from white to black I would make the following change:</p>
+		<p><code>header h1 a { color: #ffffff; }</code> &rarr; <code>header h1 a { color: #000000; }</code></p>
+		<p>To switch the footer text to black to match, I would need to make three changes:</p>
+		<p><code>footer h1 a { color: #eeeeee; }</code> &rarr; <code>footer h1 a { color: #000000; }</code></p>
+		<p><code>footer a { color: #eeeeee; }</code> &rarr; <code>footer a { color: #000000; }</code></p>
+		<p><code>footer { color: #cccccc; }</code> &rarr; <code>footer { color: #000000; }</code></p>
+		<p>You can use a HEX color chooser to find less harsh colors to your liking.</p>
+
+		<hr>
+
+		<h3 id="javascript"><strong>JavaScript</strong><small> - <a href="#toc">top</a></small></h3>
+		<p>JavaScript is kept to a minimum, and is only to avoid degradation in older browsers and smooth the scroll-to-top motion. jQuery is included by Ghost itself, and no external assets are loaded by Clae. At the bottom of <code>default.hbs</code> there is a small inline snippet so when users click the arrow in the footer, the page is smoothly scrolled to the top.</p>
+
+		<hr>
+
+		<h3 id="restrictions"><strong>Restrictions</strong><small> - <a href="#toc">top</a></small></h3>
+		<p>This theme itself is about as unlimited as can currently be made for Ghost. Unfortunately, Ghost, at this time, does not support comments or browsing by tags. Nor does it support Author pages. It does, however, deliver what it promised to deliver.</p>
+		<p>Good, clean, simple blogging.</p>
+
+		<hr>
+
+		<p>This theme was originally published on ThemeForest, but has since been removed and is now open-source, although entirely unsupported.</p>
+
+		<p><em>Best of luck,<br>
+		<img title="Lewis Goddard" alt="Lewis Goddard" src="data:image/png;base64,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"></em></p>
+		<br>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/g/jquery"></script>
+	<script type="text/javascript">
+	<!--
+	$('a').click(function() {
+		'use strict';
+		$('html, body').animate({
+			scrollTop: $( $.attr(this, 'href') ).offset().top
+		}, 500);
+		return false;
+	});
+	// -->
+	</script>
+
+</body>
+</html>

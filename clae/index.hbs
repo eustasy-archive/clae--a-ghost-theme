@@ -1,0 +1,17 @@
+{{!< default}}
+
+<div class="clae-container clae-post-index">
+	<ol class="clae-post-list">
+		{{#foreach posts}}
+			<li class="clae-post-stub{{#if @first}} first{{/if}}{{#if @last}} last{{/if}}">
+				<a title="{{title}}" href="{{url}}">
+					<h4 class="clae-post-stub-title">{{title}}</h4> <time class="clae-post-stub-date" datetime="{{published_at}}">Published {{date format="MMMM Do YYYY"}}</time>
+					<p>{{excerpt}} [&hellip;]</p>
+				</a>
+			</li>
+		{{/foreach}}
+	</ol>
+	<div class="clae-post-navigation">
+		{{pagination}}
+	</div>
+</div>

@@ -1,0 +1,94 @@
+<!DocType html>
+<html>
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<!-- These last two tags tell browsers that this page is UTF-8 Encoded,
+	and should use the latest IE rendering, and Chrome Frame, if available.
+	This comment can't be in front of them because IE doesn't like it. -->
+
+	<!-- Get the Title, Description and Keywords (Tags) from the Blog. -->
+	<title>{{meta_title}}</title>
+	<meta name="description" content="{{meta_description}}" />
+	{{#if tags}}<meta name="keywords" content="{{tags}}" />{{/if}}
+
+	<!-- Tell browsers this site is mobile friendly. -->
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Load Stylesheets -->
+	<!-- This makes all browsers start with the same defaults. -->
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/g/normalize" />
+	<!-- This loads fonts typically not on a users machine. -->
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif|Droid+Sans:400,700" />
+	<!-- This adds the theme styles. -->
+	<!-- Change "{{@blog.url}}/assets/css/style.min.css" to "{{@blog.url}}/assets/css/style.css" to use the unminified stylesheet. -->
+	<link rel="stylesheet" type="text/css" href="{{@blog.url}}/assets/css/style.min.css" />
+
+	<!-- This inline style is the only way to override the default background,
+	because Ghost does not provide a way to detect whether or not there is a blog.cover uploaded in CSS files,
+	as they do not process logic like these handlebars files do. -->
+	{{#if @blog.cover}}
+	<style>
+		/* If there is a blog.cover uploaded, use it to cover the page background, */
+		body { background: #242424 url('{{@blog.cover}}') top center fixed; background-size: cover; }
+		/* and make the header and footer transparent. */
+		header, footer { background: transparent; }
+	</style>
+	{{/if}}
+
+	<!-- Fix HTML5 Elements for Internet Explorer versions earlier than 9 -->
+	<!--[if lt IE 9]>
+		<script type="text/javascript">
+  			'use strict';
+			'article aside footer header nav section time'.replace(/\w+/g,function(n){document.createElement(n)});
+		</script>
+	<![endif]-->
+
+	<!-- Load Ghost header files. -->
+	{{ghost_head}}
+
+</head>
+
+<body class="{{body_class}}" id="jump-to-top">
+
+	<header>
+		<!-- If there's a logo, show it. You can change floatright to floatleft and the logo will be on the left. -->
+		{{#if @blog.logo}}<a title="{{@blog.title}}" href="{{@blog.url}}"><img alt="{{@blog.title}} Logo" class="logo floatright" src="{{@blog.logo}}"></a>{{/if}}
+		<!-- This is the blog title and link back to the homepage. -->
+		<h1><a title="{{@blog.title}}" href="{{@blog.url}}">{{@blog.title}}</a></h1>
+	</header>
+
+	{{{body}}}
+
+	<footer>
+		<a class="floatright" href="#jump-to-top">
+			<!--[if lte IE 8]><img src="{{@blog.url}}/assets/images/up.min.png"></a><![endif]-->
+			<!--[if gte IE 9]><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAWlBMVEWioqKqqqrJycmbm5uqqqqhoaHLy8upqanAwMC+vr7JycnOzs7Gxsa8vLzPz8/Hx8fFxcW9vb2/v7+pqamqqqqpqamgoKCcnJwAAACXl5eVlZWWlpaYmJiZmZmukAl/AAAAGXRSTlOsaALCSrEGXgoKBgYGCgYGBgoKZkxgscAAmqEjsAAAAPpJREFUeNrV1slywjAURNFmJgw2hIAFif7/N1GxcT3dqFNeUdG6z1Nb0sJKE9cbwXwiuKifBC453zoHmC+id4D5Ig4OMF/E3gHmi9gRuHwRJwCbx1kRLO85rtXagq/vGGcrxfwjZ4p1EyzH+aFVFwD72FbyfXgf8vN55wp5Iw4BMD/MfirRB4D8OV1r0Y2A+c+UKPoXaMxPo4jfoUb+d7EvoNGnIXZJzH+k1BYn1fc7HMNz3NRC1fzFNuS5h9jfC6GPEQCLMB8CYAj9G18u9vF7iOfvhXg+Xii+n7+FmPdC7OOFON8LMe+F2McL8fy9EO7Xr422/+dfo7We5HDiHn/F7/8AAAAASUVORK5CYII="></a><![endif]-->
+			<!--[if !IE]> --><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAWlBMVEWioqKqqqrJycmbm5uqqqqhoaHLy8upqanAwMC+vr7JycnOzs7Gxsa8vLzPz8/Hx8fFxcW9vb2/v7+pqamqqqqpqamgoKCcnJwAAACXl5eVlZWWlpaYmJiZmZmukAl/AAAAGXRSTlOsaALCSrEGXgoKBgYGCgYGBgoKZkxgscAAmqEjsAAAAPpJREFUeNrV1slywjAURNFmJgw2hIAFif7/N1GxcT3dqFNeUdG6z1Nb0sJKE9cbwXwiuKifBC453zoHmC+id4D5Ig4OMF/E3gHmi9gRuHwRJwCbx1kRLO85rtXagq/vGGcrxfwjZ4p1EyzH+aFVFwD72FbyfXgf8vN55wp5Iw4BMD/MfirRB4D8OV1r0Y2A+c+UKPoXaMxPo4jfoUb+d7EvoNGnIXZJzH+k1BYn1fc7HMNz3NRC1fzFNuS5h9jfC6GPEQCLMB8CYAj9G18u9vF7iOfvhXg+Xii+n7+FmPdC7OOFON8LMe+F2McL8fy9EO7Xr422/+dfo7We5HDiHn/F7/8AAAAASUVORK5CYII="></a><![endif]-->
+		<h1><a title="{{@blog.title}}" href="{{@blog.url}}">{{@blog.title}}</a></h1>
+		<!-- This is the place to add text to the footer. -->
+		<p>{{@blog.description}}<span class="floatright">Copyright {{date format="YYYY"}} &nbsp;&middot;&nbsp; Powered by <a href="http://ghost.org">Ghost</a> &nbsp;&middot;&nbsp; Designed by <a href="http://eustasy.org">eustasy</a></span></p>
+		<div class="clear"></div>
+	</footer>
+
+	<!-- Load Ghost footer files. -->
+	{{ghost_foot}}
+
+	<!-- Make scroll to top and other in page links smooth. -->
+	<script type="text/javascript">
+	<!--
+	$('a').click(function() {
+		'use strict';
+		$('html, body').animate({
+			scrollTop: $( $.attr(this, 'href') ).offset().top
+		}, 500);
+		return false;
+	});
+	// -->
+	</script>
+
+</body>
+</html>

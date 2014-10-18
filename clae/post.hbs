@@ -1,0 +1,12 @@
+{{!< default}}
+
+{{#post}}
+	<article class="{{post_class}}">
+		<h2 class="clae-post-title">{{title}}</h2>
+		<p class="clae-post-date"><time datetime="{{published_at}}">Published {{date format="MMMM Do YYYY"}} by <a href="{{author.website}}">{{author.name}}</a></time></p>
+		{{#if tags}}<p class="clae-post-tags">Tagged with: {{tags}}.</p>{{/if}}
+		<div class="clae-post-content">
+				{{{content}}}
+		</div>
+	</article>
+{{/post}}

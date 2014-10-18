@@ -1,0 +1,482 @@
+/* ==============================================================
+						Table of Contents
+
+	You can use the section titles in this table of contents,
+	prefixed with a $, to search through and quickly find
+	sections. Remember to change the style.min.css in default.hbs
+	if you want to see your changes as you upload them.
+
+	GlobalLayout
+	- HTML, Body styles.
+	- Sets default fonts and fixes smaller than window heights.
+
+	HeaderAndFooter
+	- Header and Footer styles.
+	- Sets colors for text and backgrounds.
+	- Sets default widths and padding for mid-size screens.
+		- Sometimes overridden in Responsive
+
+	ArticleAndContainer
+	- Article and Container styles.
+	- Sets default widths, margins, paddings and border-radius
+	(rounding) for mid-size screens.
+		- Sometimes overridden in Responsive
+
+	Typography
+	- H1 through H6, Paragraphs, Lists, Quotes, and Input styles.
+	- Also deals with Code blocks and images.
+	- Sets default fonts, sizes, colors and other attributes.
+
+	PostIndex
+	- Post List and Post Stub (titles and dates) styles.
+	- Sets default margins and display types (positions).
+		- Sometimes overridden in Responsive
+	- Adds transition to blue on hover.
+
+	Posts
+	- Post Date and Post Tags styles.
+	- Floats to right, changes color and shrinks slightly.
+	- Also sets width to 51% to avoid side-by-side alignment.
+
+	Pagination
+	- Page Counts and Newer/Older (Next/Previous) links.
+	- Keeps all three neatly inline and centered, regardless of
+	whether or not all three exist.
+	- The following section styles automatically generated
+	content and as such is not theme-prefixed.
+
+	SupportingClasses
+	- Floats, Clears, :focus and :selection styles.
+	- Used across themes to clear and float.
+	- Also gets rid of orange boxes around focused elements.
+
+	Responsive
+	- Header, Article, Container and Footer styles.
+	- Sets to thinner width on larger screens.
+	- Sets to wider width on larger screens.
+	- Also styles post-list-dates to be inline on larger screens.
+
+============================================================== */
+
+
+
+
+
+
+
+/* ==============================================================
+
+	$GlobalLayout
+	- HTML and Body styles.
+	- Sets default fonts and fixes smaller than window heights.
+
+============================================================== */
+
+html, body { min-height: 100%; }
+
+body {
+	background: #fefefe;
+	color: #333333;
+	font: 400 1em/1.4 'Droid Sans', 'Helvetica', 'Arial', 'Lucida Grande', 'Verdana', 'Gill Sans', sans-serif;
+}
+
+
+
+
+
+
+
+/* ==============================================================
+
+	$HeaderAndFooter
+	- Header and Footer styles.
+	- Sets colors for text and backgrounds.
+	- Sets default widths and padding for mid-size screens.
+		- Sometimes overridden in Responsive
+
+============================================================== */
+
+header,
+footer {
+	padding: 3% 15%;
+	width: 70%;
+}
+
+header{ background: #242424; color: #ffffff; }
+header a { color: #3498db; }
+header h1 a { color: #ffffff; }
+header img {
+	margin: 0;
+	max-height: 3em;
+}
+
+footer { background: #070707; color: #cccccc; }
+footer a { color: #eeeeee; }
+footer h1 a { color: #eeeeee; }
+
+
+
+
+
+
+
+/* ==============================================================
+
+	$ArticleAndContainer
+	- Article and Container styles.
+	- Sets default widths, margins, paddings and border-radius
+	(rounding) for mid-size screens.
+		- Sometimes overridden in Responsive
+
+============================================================== */
+
+article,
+.clae-container {
+	background: #fefefe;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin: 0 15%;
+	padding: 2% 2%;
+	width: 66%;
+}
+
+
+
+
+
+
+
+/* ==============================================================
+
+	$Typography
+	- H1 through H6, Paragraphs, Lists, Quotes, and Input styles.
+	- Also deals with Code blocks and images.
+	- Sets default fonts, sizes, colors and other attributes.
+
+============================================================== */
+
+p { margin: 1em 0; }
+
+a {
+	color: #2980b9;
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	text-transform: none;
+}
+
+h1 { /* Sites Title */
+	display: inline-block;
+	font: 400 3em/1 'Droid Serif', 'Georgia', 'Times New Roman', 'Palatino', 'Hoefler Text', 'Baskerville', serif;
+}
+
+h2 { /* Post Titles */
+	font-size: 3em;
+	font-weight: 400;
+	margin: 1% 0;
+}
+
+h3 {
+	font-size: 2em;
+	font-weight: 400;
+}
+
+h4 { font-size: 1.4em; }
+h5 { font-size: 1em; }
+h6 { font-size: 0.9em; }
+
+ul,
+ol {
+	list-style-position: inside;
+	margin: 3% 0;
+	padding: 0;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol { margin: 1% 3%}
+ul li,
+ol li { margin: 0 0 1%; }
+
+blockquote {
+	border-left: 3px solid #cccccc;
+	color: #777777;
+	margin: 4% 0;
+	padding: 1% 2%;
+}
+
+blockquote p {
+	display: block;
+	font-style: italic;
+	margin: 0;
+	width: 100%;
+}
+
+img { /* Max styles stop overflow */
+	display: block;
+	margin: 2% 0;
+	max-height: 100%;
+	max-width: 100%;
+	width: auto;
+}
+
+code,
+pre {
+	background: #eeeeee;
+	border: none;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #777777;
+}
+
+pre {
+	margin: 1% 0;
+	padding: 1%;
+}
+
+hr {
+	border: none;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border-top: 3px solid #777777;
+	height: 10px;
+}
+
+input,
+textarea {
+	background: #eee;
+	border: none;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #777777;
+	margin: 1% 2% 1% 0;
+	padding: 1%;
+}
+
+input[type="submit"],
+.clae-button {
+	background: #3498db;
+	color: #ffffff;
+}
+
+
+
+
+
+
+
+/* ==============================================================
+
+	$PostIndex
+	- Post List and Post Stub (titles and dates) styles.
+	- Sets default margins and display types (positions).
+		- Sometimes overridden in Responsive
+	- Adds transition to blue on hover.
+
+============================================================== */
+
+.clae-post-list {
+	list-style: none;
+	margin: 0 0 2%;
+	padding: 0;
+}
+
+.clae-post-stub { margin: 0; }
+
+.clae-post-stub a {
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	display: block;
+	color: #333333;
+	padding: 2%;
+	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-ms-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+}
+
+.clae-post-stub a:hover {
+	color: #2980b9;
+	background: #e6f1f9;
+	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-ms-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+}
+
+.clae-post-stub-title {
+	display: inline-block;
+	margin: 0;
+}
+
+.clae-post-stub-date { display: block; }
+
+
+
+
+
+
+
+/* ==============================================================
+
+	$Posts
+	- Post Date and Post Tags styles.
+	- Floats to right, changes color and shrinks slightly.
+	- Also sets width to 51% to avoid side-by-side alignment.
+
+============================================================== */
+
+.clae-post-date,
+.clae-post-tags {
+	color: #777;
+	font-size: .9em;
+	text-align: right;
+	float: right;
+	display: inline-block;
+	width: 51%;
+	margin: .3em 0;
+}
+
+
+
+
+
+
+
+/* ==============================================================
+
+	$Pagination
+	- Page Counts and Newer/Older (Next/Previous) links.
+	- Keeps all three neatly inline and centered, regardless of
+	whether or not all three exist.
+	- The following section styles automatically generated
+	content and as such is not theme-prefixed.
+
+============================================================== */
+
+.pagination {
+	display: block;
+	text-align: center;
+}
+
+.newer-posts,
+.older-posts {
+	color: #2980b9;
+	width: 25%;
+}
+
+.newer-posts {
+	float: left;
+	margin-right: -25%;
+	text-align: left;
+}
+.older-posts {
+	float: right;
+	margin-left: -25%;
+	text-align: right;
+}
+
+.next-posts-link a,
+.previous-posts-link a {
+	display: block;
+	padding: 2%;
+}
+
+
+
+
+
+
+
+/* ==============================================================
+
+	$SupportingClasses
+	- Floats, Clears, :focus and :selection styles.
+	- Used across themes to clear and float.
+	- Also gets rid of orange boxes around focused elements.
+
+============================================================== */
+
+.italic { font-style: italic; }
+
+.floatleft { float: left; }
+.floatright { float: right; }
+.floatnone { float: none; }
+
+.clear,
+.clearboth { clear: both; }
+.clearleft { clear: left; }
+.clearright { clear: right; }
+.clearnone { clear: none; }
+
+:focus { outline: none; }
+
+::-moz-selection,
+::selection {
+	background: #2980b9;
+	color: #ffffff;
+	display: block;
+}
+
+
+
+
+
+
+
+/* ==============================================================
+
+	$Responsive
+	- Header, Article, Container and Footer styles.
+	- Sets to thinner width on larger screens.
+	- Sets to wider width on larger screens.
+	- Also styles post-list-dates to be inline on larger screens.
+
+============================================================== */
+
+@media only screen and (min-width: 1024px) { /* Desktops and Laptops mostly */
+	header,
+	footer {
+		width: 60%;
+		padding: 3% 20%;
+		margin: 0;
+	}
+	footer { padding: 3% 20% 1%; }
+	article,
+	.clae-container {
+		width: 54%;
+		padding: 3%;
+		margin: 0 20%;
+	}
+	.clae-post-list { margin: 0 0 3%; }
+	.clae-post-stub-date { display: inline-block; }
+	.clae-post-stub-date:before { content: '\a0\a0 · \a0\a0'; }
+}
+
+@media only screen and (max-width: 699px) { /* Phones and smaller tablets */
+	header,
+	article,
+	.clae-container,
+	footer {
+		width: 80%;
+		padding: 3% 10%;
+		margin: 0;
+		-webkit-border-radius: 0px;
+		border-radius: 0px;
+	}
+}
+
+
+
+
+
+
